@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# =============================================================================
-#
-# Producer 2 - Asynchronous writes, with notification of delivery success or failure
-#
-# Using Confluent Python Client for Apache Kafka
-#
-# =============================================================================
-
+from confluent_kafka import Producer, Message
 import socket
-
-from confluent_kafka import Producer
 
 delivered_records = 0
 
@@ -20,7 +10,7 @@ def callback(err, msg):
         print("Failed to deliver message: {}".format(err))
     else:
         delivered_records += 1
-        print("Produced record to topic {} partition [{}] @ offset {}"
+        print("Produced record to topic {}, partition [{}], and @ offset {}"
               .format(msg.topic(), msg.partition(), msg.offset()))
 
 
