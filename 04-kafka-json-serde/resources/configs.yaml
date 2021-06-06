@@ -1,0 +1,18 @@
+kafka:
+  producer:
+    client-id: producer-lj
+    bootstrap-servers: localhost:9092
+    schema-registry: http://localhost:8081
+    topic: kafka-json-serde
+
+  consumer:
+    client-id: consumer-lj
+    bootstrap-servers: localhost:9092
+    schema-registry: http://localhost:8081
+    topic: kafka-json-serde
+    group-id: learning_journal_grp
+    auto-offset: earliest
+
+application:
+#  producer-count: 1000
+  log-level: INFO

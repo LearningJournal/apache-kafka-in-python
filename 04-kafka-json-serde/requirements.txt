@@ -1,0 +1,2 @@
+confluent-kafka[json]==1.7.0
+PyYAML==5.4.1
